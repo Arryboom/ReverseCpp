@@ -42,6 +42,10 @@ std::string KeyToChar(int KeyNum);
 
 std::string BufferString;
 
+void RecursiveKeyCheck(int KeyNum);
+
+bool Stop = false;
+
 std::string KeyToChar(int KeyNum) {
 
 	switch(KeyNum){
@@ -156,4 +160,41 @@ std::string KeyToChar(int KeyNum) {
 
 }
 
+void RecursiveKeyCheck(int KeyNum) {
+
+	while (true) {
+
+		if (Stop) {
+
+			break;
+
+		}
+
+		if (KeyCheck(KeyNum)) {
+
+			BufferString+=KeyToChar(KeyNum);
+
+		}
+
+	}
+
+}
+
+bool KeyCheck(int KeyNum) {
+
+	int KeyStat = GetAsyncKeyState(KeyNum);
+
+	if (KeyStat > 0) {
+
+		return true;
+
+	}
+
+	else { 
+
+		return false; 
+	
+	}
+
+}
 //incomplete
