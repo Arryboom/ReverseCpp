@@ -109,14 +109,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\ReverseCpp\ReverseC++\KeyLogger.h" />
-    <ClInclude Include="..\..\ReverseCpp\ReverseC++\Net.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\ReverseCpp\ReverseC++\Net.cpp" />
-    <ClCompile Include="..\..\ReverseCpp\ReverseC++\ReverseC++.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
