@@ -64,7 +64,7 @@ public:
 
 		}
 
-		if!(Number%2){
+		if(!(Number%2)){
 
 			return 1;
 
@@ -78,10 +78,10 @@ public:
 
 		int HiBit;
 
-		for (int i = sizeof(unsigned int) * 8; i > 0; i--){
+		for (int I = sizeof(unsigned int) * 8; I > 0; I--){
 
 			HiBit=(Number & 1);
-
+			
 			Number>>=1;
 
 		}
@@ -92,7 +92,7 @@ public:
 
 		}
 
-		if!(HiBit){
+		if(!(HiBit)){
 
 			return 1;
 
