@@ -44,6 +44,10 @@ public:
 
 	bool KeyCheck(int KeyNum);
 
+	int IsSetLowBit(int Number);
+
+	int IsSetHighBit(int Number);
+
 	std::string KeyToChar(int KeyNum);
 
 	std::string BufferString;
@@ -51,6 +55,54 @@ public:
 	DWORD WINAPI RecursiveKeyCheck(int KeyNum);
 
 	bool Stop = false;
+
+	int IsSetLowBit(int Number){
+
+		if(Number%2){
+
+			return 0;
+
+		}
+
+		if!(Number%2){
+
+			return 1;
+
+		}
+
+		return 0;
+
+	}
+
+	int IsSetHighBit(unsigned int Number){
+
+		int HiBit;
+
+		for (int i = sizeof(unsigned int) * 8; i > 0; i--){
+
+			HiBit=(Number & 1);
+
+			Number>>=1;
+
+		}
+
+		if(HiBit){
+
+			return 0;
+
+		}
+
+		if!(HiBit){
+
+			return 1;
+
+		}
+
+		return 0;
+
+	}
+
+
 
 	std::string KeyToChar(int KeyNum) {
 
