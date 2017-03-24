@@ -56,7 +56,7 @@ public:
 
 	bool Stop = false;
 
-	int IsSetLowBit(int Number){
+	int IsSetLowBit(unsigned int Number){
 
 		if(Number%2){
 
